@@ -13,6 +13,9 @@ import java.util.stream.Collectors;
 /**
  * 1. 파라미터 전송 기능
  * http://localhost:8080/request-param?username=hellog&age=20
+ * request.getParameter()는 GET URL 쿼리 파라미터와 POST HTML form 형식 모두 둘다 지원
+ * GET URL 쿼리파라미터는 바디 메세지가 없어서. 헤더에 Content-type이 없다.
+ * POST HTML form 형식은 바디에 보내기 떄문에 헤더에 Content-type이 application/x-www-form-urlencoded
  */
 @WebServlet(name = "requestParamServlet",urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
