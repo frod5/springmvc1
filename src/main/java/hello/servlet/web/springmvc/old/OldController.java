@@ -21,6 +21,11 @@ public class OldController implements Controller { // SimpleControllerHandlerAda
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("OldController.handleRequest");
-        return null;
+        return new ModelAndView("new-form"); // 뷰 리졸버
+        //1 = BeanNameViewResolver : 빈 이름으로 뷰를 찾아서 반환한다. (예: 엑셀 파일 생성 기능에 사용)
+        //2 = 2 = InternalResourceViewResolver : JSP를 처리할 수 있는 뷰를 반환한다.
+        // ..등등 많다.
+
+        //현재는 JSTL 라이브러리가 있어서 실제로는 JstlView 반환 (InternalResourceViewResolver를 상속받고있음).
     }
 }
